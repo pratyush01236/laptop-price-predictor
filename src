@@ -1,0 +1,30 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.pipeline import Pipeline
+
+def build_preprocessing_pipeline():
+    # Define features based on our dataset layout
+    categorical_features = ['Company', 'TypeName', 'OpSys']
+    numerical_features = ['Ram', 'Weight']
+    
+    # Preprocessing for categorical and numerical features
+    categorical_transformer = OneHotEncoder(handle_unknown='ignore')
+    numerical_transformer = StandardScaler()
+    
+    # Combine transformers
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', numerical_transformer, numerical_features),
+            ('cat', categorical_transformer, categorical_features)
+        ]
+    )
+    return preprocessor
+
+def load_and_split_data(data_path):
+    df = pd.read_csv(data_path)
+    X = df.drop(columns=['Price'])
+    y = df['Price']
+    
+    return train_test_split(X, y, test_size=0.2, random_state=42)
