@@ -1,0 +1,10 @@
+Company,TypeName,Ram,OpSys,Weight,Price
+Apple,Ultrabook,8,macOS,1.37,1339
+Apple,Ultrabook,8,macOS,1.34,898
+HP,Notebook,8,No OS,1.86,575
+Apple,Ultrabook,16,macOS,1.83,2537
+Dell,Notebook,8,Windows 10,2.18,926
+ASUS,Gaming,16,Windows 10,2.30,1499
+Lenovo,Notebook,4,Windows 10,2.20,399
+HP,Notebook,4,Windows 10,1.86,400
+Asus,ZenBook,16,Windows 10,1.20,1799
